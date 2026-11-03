@@ -1,8 +1,10 @@
 package com.project.springCrud.config;
 
+import com.project.springCrud.entities.Category;
 import com.project.springCrud.entities.Order;
 import com.project.springCrud.entities.User;
 import com.project.springCrud.entities.enums.OrderStatus;
+import com.project.springCrud.repositories.CategoryRepository;
 import com.project.springCrud.repositories.OrderRepository;
 import com.project.springCrud.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +25,16 @@ public class TestConfig implements CommandLineRunner {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private CategoryRepository categoryRepository;
+
     @Override
     public void run(String... args) throws Exception {
+
+        Category cat1 = new Category(null, "Electronics");
+        Category cat2 = new Category(null, "Books");
+        Category cat3 = new Category(null, "Computer");
+
         User u1 = new User(null, "José Ribeiro", "jose@gmail.com", "9999222", "123456");
         User u2 = new User(null, "Gabriel Silva", "gabriel@gmail.com", "9999555", "123456");
 
@@ -34,5 +44,6 @@ public class TestConfig implements CommandLineRunner {
 
         userRepository.saveAll(Arrays.asList(u1,u2));
         orderRepository.saveAll(Arrays.asList(o1,o2,o3));
+        categoryRepository.saveAll(Arrays.asList(cat1,cat2,cat3));
     }
 }
