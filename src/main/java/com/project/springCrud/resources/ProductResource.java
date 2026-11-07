@@ -1,7 +1,7 @@
 package com.project.springCrud.resources;
 
 import com.project.springCrud.entities.Product;
-import com.project.springCrud.services.ProductSevice;
+import com.project.springCrud.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,7 @@ import java.util.List;
 public class ProductResource {
 
     @Autowired
-    private ProductSevice service;
+    private ProductService service;
 
     @GetMapping
     public ResponseEntity<List<Product>> findAll(){

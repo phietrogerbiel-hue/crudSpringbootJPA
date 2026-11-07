@@ -1,7 +1,7 @@
 package com.project.springCrud.resources;
 
 import com.project.springCrud.entities.User;
-import com.project.springCrud.services.UserSevice;
+import com.project.springCrud.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +15,7 @@ import java.util.List;
 public class UserResource {
 
     @Autowired
-    private UserSevice service;
+    private UserService service;
 
     @GetMapping
     public ResponseEntity<List<User>> findAll(){

@@ -2,6 +2,7 @@ package com.project.springCrud.services;
 
 import com.project.springCrud.entities.Product;
 import com.project.springCrud.repositories.ProductRepository;
+import com.project.springCrud.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProductSevice {
+public class ProductService {
 
     @Autowired
     private ProductRepository repository;
@@ -21,6 +22,6 @@ public class ProductSevice {
 
     public Product findById(Long id){
         Optional<Product> obj = repository.findById(id);
-        return obj.get();
+        return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
 }

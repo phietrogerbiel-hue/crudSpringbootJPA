@@ -2,7 +2,7 @@ package com.project.springCrud.resources;
 
 
 import com.project.springCrud.entities.Order;
-import com.project.springCrud.services.OrderSevice;
+import com.project.springCrud.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,7 @@ import java.util.List;
 public class OrderResource {
 
     @Autowired
-    private OrderSevice service;
+    private OrderService service;
 
     @GetMapping
     public ResponseEntity<List<Order>> findAll(){

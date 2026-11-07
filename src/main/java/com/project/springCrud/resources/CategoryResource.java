@@ -1,7 +1,7 @@
 package com.project.springCrud.resources;
 
 import com.project.springCrud.entities.Category;
-import com.project.springCrud.services.CategorySevice;
+import com.project.springCrud.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,7 @@ import java.util.List;
 public class CategoryResource {
 
     @Autowired
-    private CategorySevice service;
+    private CategoryService service;
 
     @GetMapping
     public ResponseEntity<List<Category>> findAll(){
